@@ -1,0 +1,9 @@
+syntax = "proto3";
+package exchange.exchange;
+
+option go_package = "exchange/x/exchange/types";
+
+message Pool {
+  uint64 id = 1;
+  string creator = 2;
+}

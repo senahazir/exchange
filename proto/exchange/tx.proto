@@ -1,13 +1,39 @@
 syntax = "proto3";
 package exchange.exchange;
 
+import "exchange/pool.proto";
 // this line is used by starport scaffolding # proto/tx/import
 
 option go_package = "exchange/x/exchange/types";
 
 // Msg defines the Msg service.
 service Msg {
-    // this line is used by starport scaffolding # proto/tx/rpc
+    rpc CreatePool(MsgCreatePool) returns (MsgCreatePoolResponse);
+  rpc UpdatePool(MsgUpdatePool) returns (MsgUpdatePoolResponse);
+  rpc DeletePool(MsgDeletePool) returns (MsgDeletePoolResponse);
+// this line is used by starport scaffolding # proto/tx/rpc
 }
+
+message MsgCreatePool {
+  string creator = 1;
+}
+
+message MsgCreatePoolResponse {
+  uint64 id = 1;
+}
+
+message MsgUpdatePool {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgUpdatePoolResponse {}
+
+message MsgDeletePool {
+  string creator = 1;
+  uint64 id = 2;
+}
+
+message MsgDeletePoolResponse {}
 
 // this line is used by starport scaffolding # proto/tx/message

@@ -1,9 +1,11 @@
 // THIS FILE IS GENERATED AUTOMATICALLY. DO NOT MODIFY.
 
+import ExchangeDex from './exchange.dex'
 import ExchangeExchange from './exchange.exchange'
 
 
 export default { 
+  ExchangeDex: load(ExchangeDex, 'exchange.dex'),
   ExchangeExchange: load(ExchangeExchange, 'exchange.exchange'),
   
 }
